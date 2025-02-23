@@ -1,6 +1,5 @@
 from behave import given, when, then
 from src.services.wine_recommender import WineRecommender
-from src.services.performance_monitor import PerformanceMonitor
 
 @given('que eu tenho um histórico de compras e avaliações')
 def step_impl(context):
