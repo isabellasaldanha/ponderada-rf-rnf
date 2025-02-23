@@ -1,10 +1,14 @@
+from src.services.performance_monitor import PerformanceMonitor
+
 class WineRecommender:
     def __init__(self):
         self.user_history = [
             {"wine_name": "Vinho Tinto A", "rating": 5},
             {"wine_name": "Vinho Branco B", "rating": 4},
         ]
+        self.monitor = PerformanceMonitor()
 
+    @PerformanceMonitor().measure_response_time
     def get_recommendations(self):
         """Gera recomendações com base no histórico do usuário."""
         return [
